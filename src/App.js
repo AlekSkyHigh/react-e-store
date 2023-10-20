@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import Category from './components/Category';
+import { fetcher } from './fetch';
 
 function App() {
 
@@ -8,13 +9,14 @@ function App() {
   const [products, setProducts] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("http://localhost:3001/categories")
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        setCategories(data);
-      })
+    const fetchData = async () => {
+      const data = await fetcher("/categories");
+      setCategories(data);
+    }
+    fetchData();
+
   }, [])
+
 
   const handleCategoryClick = id => {
     fetch("http://localhost:3001/products?catId=" + id)
