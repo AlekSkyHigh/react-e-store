@@ -16,9 +16,21 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      {results.map(d => (<div key={d.id}>{d.title}</div>))}
-    </div>
+    <React.Fragment>
+      <header>My store</header>
+
+      <section>
+        <nav>
+          {results.map(d => (<div key={d.id}>{d.title}</div>))}
+        </nav>
+        <article>Main Area</article>
+      </section>
+
+      <footer>
+        Footer
+      </footer>
+
+    </React.Fragment>
   );
 }
 
