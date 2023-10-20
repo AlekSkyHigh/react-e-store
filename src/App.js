@@ -4,21 +4,37 @@ import Category from './components/Category';
 
 function App() {
 
-  const [results, setResults] = React.useState([])
+  const [categories, setCategories] = React.useState([]);
+  const [products, setProducts] = React.useState([]);
 
   React.useEffect(() => {
     fetch("http://localhost:3001/categories")
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        setResults(data);
+        setCategories(data);
       })
   }, [])
 
+  const handleCategoryClick = id => {
+    fetch("http://localhost:3001/products?catId=" + id)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setProducts(data);
+      })
+  }
+
   const renderCategories = () => {
-    return results.map(c =>
-      <Category key={c.id} id={c.id} title={c.title} />
+    return categories.map(c =>
+      <Category key={c.id} id={c.id} title={c.title} onCategoryClick={() => handleCategoryClick(c.id)} />
     );
+  }
+
+  const renderProducts = () => {
+    return products.map(p =>
+      <div>{p.title}</div>
+    )
   }
 
   return (
@@ -27,9 +43,12 @@ function App() {
 
       <section>
         <nav>
-          {results && renderCategories()}
+          {categories && renderCategories()}
         </nav>
-        <article>Main Area</article>
+        <article>
+          <h1>Products</h1>
+          {products && renderProducts()}
+        </article>
       </section>
 
       <footer>
