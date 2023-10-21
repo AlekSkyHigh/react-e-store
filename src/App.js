@@ -1,40 +1,38 @@
 import './App.css';
 import React from 'react';
 import Category from './components/Category';
-import { fetcher } from './fetch';
+import { getCategories, getProducts } from './fetch';
 
 function App() {
 
-  const [categories, setCategories] = React.useState([]);
-  const [products, setProducts] = React.useState([]);
+  const [categories, setCategories] = React.useState({ errorMessage: "", data: [] });
+  const [products, setProducts] = React.useState({ errorMessage: "", data: [] });
 
   React.useEffect(() => {
     const fetchData = async () => {
-      const data = await fetcher("/categories");
-      setCategories(data);
+      const responseObject = await getCategories();
+      console.log(responseObject);
+      setCategories(responseObject);
     }
     fetchData();
-
   }, [])
 
-
   const handleCategoryClick = id => {
-    fetch("http://localhost:3001/products?catId=" + id)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        setProducts(data);
-      })
+    const fetchData = async () => {
+      const responseObject = await getProducts(id);
+      setProducts(responseObject);
+    }
+    fetchData();
   }
 
   const renderCategories = () => {
-    return categories.map(c =>
+    return categories.data.map(c =>
       <Category key={c.id} id={c.id} title={c.title} onCategoryClick={() => handleCategoryClick(c.id)} />
     );
   }
 
   const renderProducts = () => {
-    return products.map(p =>
+    return products.data.map(p =>
       <div>{p.title}</div>
     )
   }
@@ -44,13 +42,18 @@ function App() {
       <header>My store</header>
 
       <section>
+
         <nav>
-          {categories && renderCategories()}
+          {categories.errorMessage && <div>Error: {categories.errorMessage}</div>}
+          {categories.data && renderCategories()}
         </nav>
+
         <article>
+          {products.errorMessage && <div>Error: {products.errorMessage}</div>}
           <h1>Products</h1>
           {products && renderProducts()}
         </article>
+
       </section>
 
       <footer>
