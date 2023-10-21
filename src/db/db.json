@@ -1,11 +1,193 @@
 {
     "categories": [
-        {"id": 1, "title": "Fridges"},
-        {"id": 2, "title": "Kettles"},
-        {"id": 3, "title": "Televisions"}
+        {
+            "id": 1,
+            "title": "Games"
+        },
+        {
+            "id": 2,
+            "title": "Consoles"
+        },
+        {
+            "id": 3,
+            "title": "Televisions"
+        }
     ],
     "products": [
-        {"id": 1, "catId": 1, "title": "Beko White Fridge Freezer"},
-        {"id": 2, "catId": 1, "title": "Whirlpool White Fridge Freezer"}
+        {
+            "id": 1,
+            "catId": 1,
+            "title": "Elden Ring (PS5)",
+            "productCode": "ERPS5",
+            "image": "elden-ring-ps5-30.jpg",
+            "price": 80,
+            "sku": "784324",
+            "description": "Are you ready to enter a world full of mystery and danger in the fantasy video game Elden Ring? The Golden Order has been broken and you must rise and wield the power of the mighty ring to become an Elden Lord.",
+            "specs": {
+                "dimensions": "1 170 x 135 x 15 mm",
+                "capacity": "45 GB"
+            },
+            "features": [
+                "Genre-defining gameplay.",
+                "PS5 Enchanced"
+            ],
+            "stock": 5
+        },
+        {
+            "id": 2,
+            "catId": 1,
+            "title": "Marvel's Spider-Man 2 (PS5)",
+            "productCode": "SMPS5",
+            "image": "marvel-s-spider-man-2-ps5-30.jpg",
+            "price": 80,
+            "sku": "784324",
+            "description": "A new chapter in the Spider-Man story. The symbiote's incredible power forces Peter and Miles to face the ultimate test of strength, both with and without the mask, as they seek to balance their personal lives, their friendships, and their duty to protect those in need.",
+            "specs": {
+                "dimensions": "1 170 x 135 x 15 mm",
+                "capacity": "80 GB"
+            },
+            "features": [
+                "DualSense Adaptive Triggers",
+                "4k 120hz"
+            ],
+            "stock": 5
+        },
+        {
+            "id": 3,
+            "catId": 2,
+            "title": "NINTENDO SWITCH LITE CORAL 32 GB",
+            "productCode": "NSWLC",
+            "image": "27988828258334.jpg",
+            "price": 199,
+            "sku": "985623",
+            "description": "Nintendo Switch Lite is a compact, lightweight Nintendo Switch system dedicated to handheld play. With a built-in +Control Pad and a sleek, unibody design, it's great for on-the-go gaming.",
+            "specs": {
+                "dimensions": "8.2 x 3.6 x 0.55",
+                "capacity": "32 GB"
+            },
+            "features": [
+                "5.5-inch 1280 x 720 LCD",
+                "32GB expandable",
+                "Nvidia Tegra X1",
+                "3-7 hours"
+            ],
+            "stock": 16
+        },
+        {
+            "id": 4,
+            "catId": 1,
+            "title": "Super Mario Bros. Wonder (Nintendo Switch)",
+            "productCode": "SMSWB",
+            "image": "super-mario-bros-wonder-nintendo-switch-30.jpg",
+            "price": 60,
+            "sku": "742158",
+            "description": "Mario's classic side-scrolling gameplay has undergone a true evolution with the addition of the special Wonder Flowers items, triggering spectacular moments that you have to see with your own eyes to believe.",
+            "specs": {
+                "dimensions": "105 x 170 x 11 mm",
+                "capacity": "3.5 GB"
+            },
+            "features": [
+                "Nintendo Switch dock"
+            ],
+            "stock": 8
+        },
+        {
+            "id": 5,
+            "catId": 3,
+            "title": "SONY XR-98X90L 4K Ultra HD LED SMART TV, ANDROID TV,  98.0 inch",
+            "productCode": "TV4K98",
+            "image": "31909787500574.jpg",
+            "price": 8999,
+            "sku": "634982",
+            "description": "Experience stunning visuals and smart features with our 98-inch Ultra HD 4K Smart TV. Enjoy your favorite shows, movies, games and apps with the best clarity.",
+            "specs": {
+                "dimensions": "1305 x 2199 x 465",
+                "screen size": "98 inches"
+            },
+            "features": [
+                "Perfect for PlayStation 5",
+                "4K resolution for crystal-clear picture quality",
+                "Built-in Wi-Fi and app support for streaming"
+            ],
+            "stock": 8
+        },
+        {
+            "id": 6,
+            "catId": 3,
+            "title": "LG OLED83G23LA 4K Ultra HD OLED SMART TV, WEBOS, 83.0 inch",
+            "productCode": "TV4K83",
+            "image": "28623157067806.jpg",
+            "price": 3999,
+            "sku": "634982",
+            "description": "Experience stunning visuals and smart features with our 98-inch Ultra HD 4K Smart TV. Enjoy your favorite shows, movies, games and apps with the best clarity.",
+            "specs": {
+                "dimensions": "1052 x 1847 x 28",
+                "screen size": "83 inches"
+            },
+            "features": [
+                "Perfect for PlayStation 5",
+                "4K resolution for crystal-clear picture quality",
+                "Built-in Wi-Fi and app support for streaming"
+            ],
+            "stock": 10
+        },
+        {
+            "id": 7,
+            "catId": 3,
+            "title": "SAMSUNG QE-98QN90A 4K Ultra HD QLED SMART TV, TIZEN, 98.0 inch ",
+            "productCode": "TV4K98S",
+            "image": "29483902500894.jpg",
+            "price": 10199,
+            "sku": "634982",
+            "description": "Experience stunning visuals and smart features with our 98-inch Ultra HD 4K Smart TV. Enjoy your favorite shows, movies, games and apps with the best clarity.",
+            "specs": {
+                "dimensions": "1319 x 2185 x 367",
+                "screen size": "98 inches"
+            },
+            "features": [
+                "Perfect for PlayStation 5",
+                "4K resolution for crystal-clear picture quality",
+                "Built-in Wi-Fi and app support for streaming"
+            ],
+            "stock": 12
+        },
+        {
+            "id": 8,
+            "catId": 2,
+            "title": "NINTENDO SWITCH OLED ZELDA EDITION 64GB",
+            "productCode": "NSWOZ",
+            "image": "30201413992478.jpg",
+            "price": 400,
+            "sku": "985623",
+            "description": "Nintendo Switch - OLED Model features a vibrant 7-inch OLED screen, a wide adjustable stand, a dock with a wired LAN port (LAN cable sold separately), 64 GB of internal storage (a portion of which is reserved for use by the system), and enhanced audio in handheld and tabletop mode.",
+            "specs": {
+                "dimensions": "24.13 cm x 1.4 cm x 10.16 cm",
+                "capacity": "64 GB"
+            },
+            "features": [
+                "7-inch OLED screen. Enjoy vivid colors and crisp contrast with a screen that makes colors pop.",
+                "Wide adjustable stand. Freely angle the system's wide, adjustable stand for comfortable viewing in Tabletop mode."
+            ],
+            "stock": 16
+        },
+        {
+            "id": 9,
+            "catId": 2,
+            "title": "PLAYSTATION 5 PS5",
+            "productCode": "SPS5",
+            "image": "29790203838494.jpg",
+            "price": 600,
+            "sku": "985623",
+            "description": "Not only does the PS5 offer 4K gaming, but it also has seriously advanced haptics, a speedy SSD and immersive 3D audio. All of these and more combine to deliver a console that's truly equipped for next-generation.",
+            "specs": {
+                "dimensions": "358 × 96 × 216mm",
+                "capacity": "800 GB"
+            },
+            "features": [
+                "Adaptive triggers",
+                "4k 120hz"
+            ],
+            "stock": 8
+        }
     ]
 }

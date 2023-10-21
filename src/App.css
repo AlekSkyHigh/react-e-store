@@ -52,16 +52,15 @@ main {
 }
 
 article {
-  -webkit-flex: 4;
+  /* -webkit-flex: 4;
   -ms-flex: 4;
   flex: 4;
   background-color: #f1f1f1;
-  padding: 10px;
-
-  /* display: grid;
+  padding: 10px; */
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.25fr 1fr 0.25fr;
-  coLumn-gap: 20px; */
+  coLumn-gap: 20px;
 }
 
 /* Style the footer */
@@ -72,7 +71,7 @@ footer {
   color: white;
 }
 
-/* .category-product-title {
+.category-product-title {
   grid-column: 1 / span 3;
   color: darkslategray;
   font-weight: bold;
@@ -151,7 +150,7 @@ footer {
   background-color: lightgray;
   border: solid 1px slategrey;
   font-weight: bold;
-} */
+}
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {
