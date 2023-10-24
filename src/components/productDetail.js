@@ -10,7 +10,6 @@ const ProductDetail = () => {
         const fetchData = async () => {
             const responseObject = await getProductById(productId);
             setProduct(responseObject);
-            console.log(product);
         }
         fetchData();
     }, [productId]);

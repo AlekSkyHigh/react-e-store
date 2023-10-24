@@ -7,7 +7,7 @@ const CategoryProduct = ({ id, title, image, specs, features, price, stock }) =>
     return (
         <article>
             <div className="category-product-title">
-                <Link to={`products/${id}`}>{title}</Link>
+                <Link to={`/products/${id}`}>{title}</Link>
             </div>
 
             <figure>
@@ -50,7 +50,7 @@ const CategoryProduct = ({ id, title, image, specs, features, price, stock }) =>
                 </div>
 
                 <div className="category-product-action">
-                    <button onClick={() => navigate(`products/${id}`)}>View Product</button>
+                    <button onClick={() => navigate(`/products/${id}`)}>View Product</button>
                     <button>Add to Basket</button>
                 </div>
             </aside>

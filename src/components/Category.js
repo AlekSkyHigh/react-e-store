@@ -6,7 +6,7 @@ import CategoryProduct from "./categoryProduct";
 const Category = ({ id, title, onCategoryClick }) => {
 
     const [products, setProducts] = React.useState({
-        errorMessege: '',
+        errorMessage: '',
         data: [],
     })
 
