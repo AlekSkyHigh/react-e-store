@@ -7,12 +7,12 @@ const CategoryProduct = ({ id, title, image, specs, features, price, stock }) =>
     return (
         <article>
             <div className="category-product-title">
-               <Link to={`products/${id}`}>{title}</Link>
+                <Link to={`products/${id}`}>{title}</Link>
             </div>
 
             <figure>
                 <div className="category-product-image-container">
-                    <img src={`./assets/${image}`} alt={title} />
+                    <img src={`/assets/${image}`} alt={title} />
                 </div>
             </figure>
 

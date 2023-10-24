@@ -3,6 +3,7 @@ import React from 'react';
 import Category from './components/Category';
 import { getCategories, getProducts } from './fetch';
 import CategoryProduct from './components/categoryProduct';
+import { Link } from 'react-router-dom';
 
 function App() {
 
@@ -28,12 +29,8 @@ function App() {
 
   const renderCategories = () => {
     return categories.data.map(c =>
-      <Category key={c.id} id={c.id} title={c.title} onCategoryClick={() => handleCategoryClick(c.id)} />
+      <li key={c.id}><Link to={`/categories/${c.id}`}>{c.title}</Link> </li>
     );
-  }
-
-  const renderProducts = () => {
-    return products.data.map(p => <CategoryProduct key={p.id} {...p}>{p.title}</CategoryProduct>)
   }
 
   return (
@@ -48,9 +45,7 @@ function App() {
         </nav>
 
         <main>
-          <h1>Products</h1>
-          {products.errorMessage && <div>Error: {products.errorMessage}</div>}
-          {products && renderProducts()}
+          
         </main>
 
       </section>
