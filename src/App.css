@@ -156,6 +156,54 @@ footer {
   grid-column: 1 / span 3;
 }
 
+.basket-container {
+  display: grid;
+  padding: 20px;
+  grid-template-rows: 0.25fr 1fr 0.25fr;
+  grid-template-columns: 17.1fr 15fr 0.1fr;
+}
+
+.basket-table {
+  grid-column: 1 / span 3;
+  grid-template-rows: 0.25fr 1fr 0.25fr 0.25fr;
+  column-gap: 20px;
+  padding-left: 10px;
+}
+
+.basket-header {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
+}
+
+.basket-headerline {
+  margin-bottom: 20px;
+  border: 1px solid gray;
+}
+
+.basket-title {
+  grid-column: 1 / span 2;
+  padding-bottom: 20px;
+}
+
+.basket-qty {
+  font-size: 18px;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 0.1fr 0.05fr 0.1fr 0.1fr;
+}
+
+.basket-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.basket-button {
+  border-radius: 8px;
+  height: 40px;
+  border: 1px solid black;
+  width: 80px;
+}
+
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {
   section {
