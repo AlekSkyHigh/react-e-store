@@ -28,6 +28,7 @@ export const CartReducer = (state, action) => {
             if (index > -1) {
                 state.cartItems[index].quantity--;
             }
+            break;
 
         case "CLEAR":
             state.cartItems = [];
