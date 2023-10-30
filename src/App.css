@@ -4,6 +4,11 @@
   margin: 0px;
 }
 
+a {
+  color: darkslategray;
+  text-decoration: none;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -14,6 +19,12 @@ header {
   padding: 30px;
   text-align: center;
   font-size: 35px;
+  color: white;
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 0.1fr;
+}
+
+header a {
   color: white;
 }
 
@@ -68,6 +79,10 @@ footer {
   background-color: #777;
   padding: 10px;
   text-align: center;
+  color: white;
+}
+
+footer a {
   color: white;
 }
 
@@ -197,11 +212,23 @@ footer {
   font-weight: bold;
 }
 
+.basket-total {
+  justify-self: end;
+}
+
 .basket-button {
   border-radius: 8px;
   height: 40px;
   border: 1px solid black;
   width: 80px;
+}
+
+#headerHomeIcon {
+  align-content: start;
+}
+
+#headerCartIcon {
+  justify-self: end;
 }
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */

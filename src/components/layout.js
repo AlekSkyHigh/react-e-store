@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
+import { HomeIcon, CartIcon } from './icons'
 
 const Layout = ({ categories }) => {
 
@@ -13,7 +14,11 @@ const Layout = ({ categories }) => {
 
     return (
         <React.Fragment>
-            <header>My store</header>
+            <header>
+                <div id='headerHomeIcon'><Link to={'/'}><HomeIcon width={60} /></Link></div>
+                <div id='headerTitle'>Our Store</div>
+                <div id='headerCartIcon'><Link to={'/basket'}><CartIcon width={60} /></Link></div>
+            </header>
 
             <section>
                 <nav>

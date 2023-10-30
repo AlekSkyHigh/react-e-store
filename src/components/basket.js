@@ -29,6 +29,14 @@ const Basket = () => {
 
   }
 
+  const renderTotal = () => {
+    const cartItems = getItems();
+
+    const total = cartItems.reduce((total, item) => (total + item.price * item.quantity), 0)
+
+    return total;
+  }
+
   return (
     <div className='basket-container'>
       <h2 className='basket-title'>Shopping Basket</h2>
@@ -48,11 +56,10 @@ const Basket = () => {
         </div>
 
         <hr className='basket-headerline'></hr>
+      </div>
 
         <button className='basket-button' onClick={() => clearBasket()}>Clear</button>
-        <h2 className='basket-total'>Total: $0</h2>
-
-      </div>
+        <h2 className='basket-total'>Total: &pound;{renderTotal()}</h2>
 
     </div>
   )
