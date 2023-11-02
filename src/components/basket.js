@@ -1,24 +1,29 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { CartContext } from '../contexts/cartContext'
 import { Link, useNavigate } from 'react-router-dom';
 import { UpIcon, DownIcon, TrashIcon } from './icons';
 
 const Basket = () => {
+
+  const [cartItems, setCartItems] = useState([]);
+
   const { getItems, clearBasket, increaseQuantity, decreaseQuantity, removeProduct } = useContext(CartContext);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setCartItems(getItems());
+  }, [getItems])
+
   const renderCart = () => {
 
-    const cartItems = getItems();
-
-    if (cartItems.length > 0) {
+    if (cartItems?.length > 0) {
       return cartItems.map((p) => (
-        <React.Fragment>
+        <React.Fragment key={p.id}>
           <div><Link to={`/products/${p.id}`}>{p.title}</Link></div>
           <h3>{p.quantity}
-            <UpIcon width={16} onClick={() => increaseQuantity({ id: p.id })} />
-            <DownIcon width={16} onClick={() => decreaseQuantity({ id: p.id })} />
-            <TrashIcon width={16} onClick={() => removeProduct({ id: p.id })} />
+            <UpIcon width={16} onClick={() => setCartItems(increaseQuantity({ id: p.id }))} />
+            <DownIcon width={16} onClick={() => setCartItems(decreaseQuantity({ id: p.id }))} />
+            <TrashIcon width={16} onClick={() => setCartItems(removeProduct({ id: p.id }))} />
           </h3>
           <h3>&pound;{p.price}</h3>
         </React.Fragment>
@@ -58,8 +63,8 @@ const Basket = () => {
         <hr className='basket-headerline'></hr>
       </div>
 
-        <button className='basket-button' onClick={() => clearBasket()}>Clear</button>
-        <h2 className='basket-total'>Total: &pound;{renderTotal()}</h2>
+      <button className='basket-button' onClick={() => setCartItems(clearBasket())}>Clear</button>
+      <h2 className='basket-total'>Total: &pound;{renderTotal()}</h2>
 
     </div>
   )

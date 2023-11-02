@@ -6,34 +6,39 @@ export const CartReducer = (state, action) => {
         index = state.cartItems.findIndex(x => x.id === action.payload.id);
     }
 
-    switch (action.type) {
+    let newItems = [...state.cartItems];
 
+    switch (action.type) {
         case "ADD":
         case "INCQTY":
             if (index === -1) {
-                state.cartItems.push({ ...action.payload, quantity: 1 });
+                // state.cartItems.push({ ...action.payload, quantity: 1 });
+                newItems.push({ ...action.payload, quantity: 1 });
             }
             else {
-                state.cartItems[index].quantity++;
+                // state.cartItems[index].quantity++;
+                newItems[index] = { ...newItems[index], quantity: newItems[index].quantity + 1 };
             }
             break;
 
         case "REMOVE":
             if (index > -1) {
-                state.cartItems.splice(index, 1);
+                // state.cartItems.splice(index, 1); // BAD WAY...
+                newItems = state.cartItems.filter(x => x.id !== action.payload.id); // Good Way..
             }
             break;
 
         case "DECQTY":
-            if (index > -1) {
-                state.cartItems[index].quantity--;
+            if (index > -1 && newItems[index].quantity > 1) {
+                newItems[index] = { ...newItems[index], quantity: newItems[index].quantity - 1 };
             }
             break;
 
         case "CLEAR":
-            state.cartItems = [];
-
+            newItems = [];
+            break;
         default:
     }
-    return state;
+
+    return { ...state, cartItems: newItems };
 }
