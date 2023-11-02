@@ -9,6 +9,7 @@ import Checkout from './components/checkout';
 import Category from './components/Category';
 import Layout from './components/layout';
 import Home from './components/home';
+import OrderConfirmation from './components/orderConfirmation';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='/basket' element={<Basket />} />
             <Route path='/checkout' element={<Checkout />} />
+            <Route path='/orderconfirmation' element={<OrderConfirmation />} />
             <Route path='/products/:productId' element={<ProductDetail />} />
             <Route path='/categories/:categoryId' element={<Category />} />
           </Route>
