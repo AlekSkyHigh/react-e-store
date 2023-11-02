@@ -60,6 +60,7 @@ nav ul li:hover {
 
 main {
   padding-top: 20px;
+  width: 100%;
 }
 
 article {
@@ -230,6 +231,68 @@ footer a {
 #headerCartIcon {
   justify-self: end;
 }
+
+.checkout-container {
+  display: grid;
+  padding: 20px;
+  grid-template-rows: 0.25fr 1fr 0.25fr 0.25fr 0.25fr 0.5fr;
+  grid-template-columns: 0.1fr 1fr 0.1fr;
+}
+
+.checkout-table {
+  grid-column: 1 / span 3;
+  display: grid;
+  grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr;
+  grid-template-columns: 0.1fr 0.4fr 0.1fr 0.4fr;
+  column-gap: 20px;
+  padding-left: 10px;
+}
+
+.cheackout-header {
+  grid-column: 1 / span 3;
+  padding-top: 20px;
+}
+
+.checkout-headerline {
+  grid-column: 1 / span 3;
+  margin-bottom: 20px;
+  border: 1px solid gray;
+}
+
+.checkout-title {
+  grid-column: 1 / span 3;
+  padding-bottom: 20px;
+}
+
+.checkout-address {
+  display: grid;
+  grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px
+}
+
+.checkout-form-label {
+  justify-self: end;
+}
+
+.checkout-form-checkbox {
+  grid-column: 2 / span 3;
+  justify-self: start;
+  margin-bottom: 20px;
+}
+
+.checkout-button {
+  border-radius: 8px;
+  height: 40px;
+  grid-column: 3;
+}
+
+.cancel-button {
+  border-radius: 8px;
+  height: 40px;
+  grid-column: 1;
+}
+
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {
