@@ -21,7 +21,7 @@ header {
   font-size: 35px;
   color: white;
   display: grid;
-  grid-template-columns: 0.1fr 1fr 0.1fr;
+  grid-template-columns: 0.1fr 0.1fr 1fr 0.1fr;
 }
 
 header a {
@@ -298,6 +298,15 @@ footer a {
   grid-column: 1;
 }
 
+#search {
+  display: flex;
+}
+
+#search input {
+  margin-left: 10px;
+  height: 30px;
+  margin-top: 5px;
+}
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {
