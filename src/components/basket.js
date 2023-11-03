@@ -25,7 +25,7 @@ const Basket = () => {
             <DownIcon width={16} onClick={() => setCartItems(decreaseQuantity({ id: p.id }))} />
             <TrashIcon width={16} onClick={() => setCartItems(removeProduct({ id: p.id }))} />
           </h3>
-          <h3>&pound;{p.price}</h3>
+          <h3>&euro;{p.price}</h3>
         </React.Fragment>
       ))
     } else {
@@ -64,7 +64,7 @@ const Basket = () => {
       </div>
 
       <button className='basket-button' onClick={() => setCartItems(clearBasket())}>Clear</button>
-      <h2 className='basket-total'>Total: &pound;{renderTotal()}</h2>
+      <h2 className='basket-total'>Total: &euro;{renderTotal()}</h2>
 
     </div>
   )

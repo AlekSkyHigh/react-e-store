@@ -168,6 +168,11 @@ footer a {
   font-weight: bold;
 }
 
+.category-product-finance-price {
+  font-size: larger;
+  font-weight: bold;
+}
+
 .product-detail-description {
   grid-column: 1 / span 3;
 }

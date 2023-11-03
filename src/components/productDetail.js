@@ -52,7 +52,7 @@ const ProductDetail = () => {
 
             <aside className="category-product-finance">
                 <div className="category-product-finance-price">
-                    &pound;{product.data.price}
+                    `&euro;{product.data.price}`
                 </div>
 
                 <div className="category-product-info-stock">

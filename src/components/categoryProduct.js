@@ -44,7 +44,7 @@ const CategoryProduct = ({ id, title, image, specs, features, price, stock }) =>
 
             <aside className="category-product-finance">
                 <div className="category-product-finance-price">
-                    &pound;{price}
+                    &euro;{price.toFixed(2)}
                 </div>
 
                 <div className="category-product-info-stock">
