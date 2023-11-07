@@ -3,10 +3,23 @@ import { useNavigate } from 'react-router-dom'
 
 const Search = () => {
 
+    const [searchTerm, setSearchTerm] = React.useState('');
+
     const navigate = useNavigate();
 
+    React.useEffect(() => {
+        const delay = setTimeout(() => {
+            if (searchTerm) {
+                navigate('/search?s=' + searchTerm);
+            }
+        }, 1000);
+
+        return () => clearTimeout(delay);
+
+    }, [searchTerm])
+
     const handleChange = ev => {
-        navigate('/search?s=' + ev.target.value);
+        setSearchTerm(ev.target.value)
     }
 
     return (
